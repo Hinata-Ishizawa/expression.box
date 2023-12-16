@@ -33,6 +33,8 @@ data_arange <- function(file_path, gene_set, sample, replication){
 #' @importFrom tidyr pivot_longer
 #' @importFrom ggpubr ggboxplot
 #' @importFrom ggplot2 theme
+#' @importFrom ggplot2 element_blank
+#' @importFrom ggplot2 element_text
 #' @export
 #'
 
