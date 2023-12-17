@@ -2,9 +2,12 @@
 
 export(data_arange)
 export(expression_box)
+export(generate_exp_table)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,filter)
+importFrom(dplyr,left_join)
 importFrom(dplyr,mutate)
+importFrom(dplyr,select)
 importFrom(ggplot2,element_blank)
 importFrom(ggplot2,element_text)
 importFrom(ggplot2,theme)
