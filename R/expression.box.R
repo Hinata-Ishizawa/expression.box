@@ -1,3 +1,33 @@
+#' Create count table
+#' 
+#' @param directory_path RSEMで出力される.resultファイルがあるディレクトリのパス
+#'
+#' @importFrom dplyr select
+#' @importFrom dplyr left_join
+#' @importFrom dplyr %>%
+#' @export
+#'
+generate_exp_table <- function(directory_path){
+  file_list1 <- list.files(path = directory_path, full.names = TRUE)
+  file_list2 <- list.files(path = directory_path, full.names = FALSE)
+  data_n <- length(file_list1)
+  filename <- file_list2[1]
+  exp_count <- read.table(file_list[1], head = T, sep = "\t") %>% 
+    dplyr::select(gene_id, expected_count)
+  colnames(exp_count)[colnames(exp_count) == "expected_count"] <- filename
+  for (i in 2:data_n){
+    filename <- file_list2[i]
+    temporary <- read.table(file_list1[i], head = T, sep = "\t") %>% 
+      dplyr::select(gene_id, expected_count)
+    exp_count <- dplyr::left_join(exp_count, temporary, by = "gene_id")
+    colnames(exp_count)[colnames(exp_count) == "expected_count"] <- filename
+  }
+  rownames(exp_count) <- exp_count$gene_id
+  exp_count2 <- exp_count %>% 
+    dplyr::select(-gene_id)
+  write.table(exp_count2, file = "exp.counts.txt", sep = "\t", quote = FALSE, row.names = TRUE)
+}
+
 #' Format TPM data
 #' 
 #' @param file_path TPMファイルのパス
