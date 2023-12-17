@@ -28,6 +28,50 @@ generate_exp_table <- function(directory_path){
   write.table(exp_count2, file = "exp.counts.txt", sep = "\t", quote = FALSE, row.names = TRUE)
 }
 
+#' Create TPM table
+#' 
+#' @param directory_path RSEMで出力される.resultファイルがあるディレクトリのパス
+#'
+#' @importFrom dplyr select
+#' @importFrom dplyr left_join
+#' @importFrom dplyr %>%
+#' @export
+#'
+generate_TPM_table <- function(directory_path){
+  file_list1 <- list.files(path = directory_path, full.names = TRUE)
+  file_list2 <- list.files(path = directory_path, full.names = FALSE)
+  data_n <- length(file_list1)
+  filename <- file_list2[1]
+  TPM <- read.table(file_list1[1], head = T, sep = "\t") %>% 
+    dplyr::select(gene_id, TPM)
+  colnames(TPM)[colnames(TPM) == "TPM"] <- filename
+  for (i in 2:data_n){
+    filename <- file_list2[i]
+    temporary <- read.table(file_list1[i], head = T, sep = "\t") %>% 
+      dplyr::select(gene_id, TPM)
+    TPM <- dplyr::left_join(TPM, temporary, by = "gene_id")
+    colnames(TPM)[colnames(TPM) == "TPM"] <- filename
+  }
+  rownames(TPM) <- TPM$gene_id
+  TPM2 <- TPM %>% 
+    select(-gene_id)
+  write.table(TPM2, file = "TPM.txt", sep = "\t", quote = FALSE, row.names = TRUE)
+}
+
+#' Create both of count table and TPM table
+#' 
+#' @param directory_path RSEMで出力される.resultファイルがあるディレクトリのパス
+#'
+#' @importFrom dplyr select
+#' @importFrom dplyr left_join
+#' @importFrom dplyr %>%
+#' @export
+#'
+generate_both_table <- function(directory_path){
+  generate_exp_table(directory_path)
+  generate_TPM_table(directory_path)
+}
+
 #' Format TPM data
 #' 
 #' @param file_path TPMファイルのパス

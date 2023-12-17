@@ -2,6 +2,8 @@
 
 export(data_arange)
 export(expression_box)
+export(generate_TPM_table)
+export(generate_both_table)
 export(generate_exp_table)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,filter)
