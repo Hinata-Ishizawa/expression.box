@@ -12,7 +12,7 @@ generate_exp_table <- function(directory_path){
   file_list2 <- list.files(path = directory_path, full.names = FALSE)
   data_n <- length(file_list1)
   filename <- file_list2[1]
-  exp_count <- read.table(file_list[1], head = T, sep = "\t") %>% 
+  exp_count <- read.table(file_list1[1], head = T, sep = "\t") %>% 
     dplyr::select(gene_id, expected_count)
   colnames(exp_count)[colnames(exp_count) == "expected_count"] <- filename
   for (i in 2:data_n){
