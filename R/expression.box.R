@@ -7,7 +7,7 @@
 #' @importFrom dplyr %>%
 #' @export
 #'
-generate_exp_table <- function(directory_path){
+generate_exp_table <- function(directory_path = "result"){
   file_list1 <- list.files(path = directory_path, full.names = TRUE)
   file_list2 <- list.files(path = directory_path, full.names = FALSE)
   data_n <- length(file_list1)
@@ -37,7 +37,7 @@ generate_exp_table <- function(directory_path){
 #' @importFrom dplyr %>%
 #' @export
 #'
-generate_TPM_table <- function(directory_path){
+generate_TPM_table <- function(directory_path = "result"){
   file_list1 <- list.files(path = directory_path, full.names = TRUE)
   file_list2 <- list.files(path = directory_path, full.names = FALSE)
   data_n <- length(file_list1)
@@ -67,7 +67,7 @@ generate_TPM_table <- function(directory_path){
 #' @importFrom dplyr %>%
 #' @export
 #'
-generate_both_table <- function(directory_path){
+generate_both_table <- function(directory_path = "result"){
   generate_exp_table(directory_path)
   generate_TPM_table(directory_path)
 }
@@ -85,7 +85,7 @@ generate_both_table <- function(directory_path){
 #' @importFrom tidyr pivot_longer
 #' @export
 #'
-data_arange <- function(file_path, gene_set, sample, replication){
+data_arange <- function(file_path = "TPM.txt", gene_set, sample, replication = 3){
   read.table(file_path) -> data
   dplyr::mutate(data, genes = rownames(data))  %>% 
   dplyr::filter(genes %in% gene_set) %>% 
@@ -112,7 +112,7 @@ data_arange <- function(file_path, gene_set, sample, replication){
 #' @export
 #'
 
-expression_box <- function(file_path, gene_set, sample, replication, pal){
+expression_box <- function(file_path = "TPM.txt", gene_set, sample, replication = 3, pal){
   data_arange(file_path, gene_set, sample, replication) %>% 
   ggpubr::ggboxplot(x="Group", y="TPM", facet.by = "genes", 
             color = "Group", ylab = "TPM",

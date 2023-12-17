@@ -4,7 +4,7 @@
 \alias{generate_exp_table}
 \title{Create count table}
 \usage{
-generate_exp_table(directory_path)
+generate_exp_table(directory_path = "result")
 }
 \arguments{
 \item{directory_path}{RSEMで出力される.resultファイルがあるディレクトリのパス}

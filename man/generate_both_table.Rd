@@ -4,7 +4,7 @@
 \alias{generate_both_table}
 \title{Create both of count table and TPM table}
 \usage{
-generate_both_table(directory_path)
+generate_both_table(directory_path = "result")
 }
 \arguments{
 \item{directory_path}{RSEMで出力される.resultファイルがあるディレクトリのパス}

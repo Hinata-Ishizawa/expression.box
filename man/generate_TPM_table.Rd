@@ -4,7 +4,7 @@
 \alias{generate_TPM_table}
 \title{Create TPM table}
 \usage{
-generate_TPM_table(directory_path)
+generate_TPM_table(directory_path = "result")
 }
 \arguments{
 \item{directory_path}{RSEMで出力される.resultファイルがあるディレクトリのパス}

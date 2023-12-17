@@ -4,7 +4,7 @@
 \alias{data_arange}
 \title{Format TPM data}
 \usage{
-data_arange(file_path, gene_set, sample, replication)
+data_arange(file_path = "TPM.txt", gene_set, sample, replication = 3)
 }
 \arguments{
 \item{file_path}{TPMファイルのパス}
