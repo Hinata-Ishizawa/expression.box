@@ -4,7 +4,13 @@
 \alias{expression_box}
 \title{Create Boxplot to compare gene expression between different populations}
 \usage{
-expression_box(file_path = "TPM.txt", gene_set, sample, replication = 3, pal)
+expression_box(
+  file_path = "TPM.txt",
+  gene_set,
+  sample,
+  replication = 3,
+  pal = viridis(30)
+)
 }
 \arguments{
 \item{file_path}{TPMファイルのパス}
