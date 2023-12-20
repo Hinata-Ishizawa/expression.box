@@ -9,7 +9,7 @@ expression_box(
   gene_set,
   sample,
   replication = 3,
-  pal = viridis(30)
+  pal = NULL
 )
 }
 \arguments{

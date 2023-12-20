@@ -109,11 +109,10 @@ data_arange <- function(file_path = "TPM.txt", gene_set, sample, replication = 3
 #' @importFrom ggplot2 theme
 #' @importFrom ggplot2 element_blank
 #' @importFrom ggplot2 element_text
-#' @importFrom viridis viridis
 #' @export
 #'
 
-expression_box <- function(file_path = "TPM.txt", gene_set, sample, replication = 3, pal = viridis(30)){
+expression_box <- function(file_path = "TPM.txt", gene_set, sample, replication = 3, pal = NULL){
   data_arange(file_path, gene_set, sample, replication) %>% 
   ggpubr::ggboxplot(x="Group", y="TPM", facet.by = "genes", 
             color = "Group", ylab = "TPM",
