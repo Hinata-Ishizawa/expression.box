@@ -60,3 +60,5 @@ would be useful if you want to create both table.
 - `sample`: Sample names.
 - `replication`: Number of reprications of each sample.
 - `pal`: Color pallet for boxplot. Default is 'NULL'.
+
+If you want to only formatting TPM data for creating boxplot and create it yourself, you can use `data_arange()`.
