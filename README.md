@@ -43,18 +43,8 @@ simply run:
 generate_TPM_table()
 ```
 
-Optionally, if you want to do the analysis using expected_count, you can run
-
-```R
-generate_exp_table()
-```
-
-to extract requred information. 
-
-```R
-generate_both_table()
-```
-would be useful if you want to create both table.
+Optionally, if you want to do the analysis using expected_count, you can run `generate_exp_table()` to extract requred information. 
+`generate_both_table()` would be useful if you want to create both table.
 
 ### Createing boxplot
 `expression_box()` creates boxplot from TPM.txt created by `generate_TPM_table()`. The parameters of this function are:
