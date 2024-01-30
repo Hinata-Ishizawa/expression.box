@@ -4,7 +4,10 @@
 `expression.box` generates boxplot from read count data output by [RSEM](https://github.com/deweylab/RSEM) (.result file).
 `expression.box` contains 2 main functions: `generate_TPM_table()` and `expression_box()`.
 Using them, you can easily visualize the expression levels of the genes you are interested in.
-<!--ここに図入れる-->
+
+<img src="image/overall.png" alt="what this package can do" width=700>
+
+This package was originally developed for members of Weed Science lab of Kyoto University.
 
 ## Installation
 You need `devtools` for the installation of `expression.box`.
@@ -40,18 +43,8 @@ simply run:
 generate_TPM_table()
 ```
 
-Optionally, if you want to do the analysis using expected_count, you can run
-
-```R
-generate_exp_table()
-```
-
-to extract requred information. 
-
-```R
-generate_both_table()
-```
-would be useful if you want to create both table.
+Optionally, if you want to do the analysis using expected_count, you can run `generate_exp_table()` to extract requred information. 
+`generate_both_table()` would be useful if you want to create both table.
 
 ### Createing boxplot
 `expression_box()` creates boxplot from TPM.txt created by `generate_TPM_table()`. The parameters of this function are:
