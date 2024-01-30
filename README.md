@@ -5,7 +5,7 @@
 `expression.box` contains 2 main functions: `generate_TPM_table()` and `expression_box()`.
 Using them, you can easily visualize the expression levels of the genes you are interested in.
 
-<img src="image/overall.png" alt="what this package can do" width=700>
+<img src="image/overall2.png" alt="what this package can do" width=1000>
 
 This package was originally developed for members of Weed Science lab of Kyoto University.
 
