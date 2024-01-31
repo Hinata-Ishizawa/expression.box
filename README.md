@@ -1,8 +1,8 @@
 # expression.box : an R package for visualizing gene expression level
 
 ## What is it?
-`expression.box` generates boxplot from read count data output by [RSEM](https://github.com/deweylab/RSEM) (.result file).
-`expression.box` contains 2 main functions: `generate_TPM_table()` and `expression_box()`.
+`expression.box` generates boxplot from read count data output by [RSEM](https://github.com/deweylab/RSEM) (.result file). 
+`expression.box` contains 2 main functions: `generate_TPM_table()` and `expression_box()`. 
 Using them, you can easily visualize the expression levels of the genes you are interested in.
 
 <img src="image/overall2.png" alt="what this package can do" width=1000>
@@ -10,7 +10,7 @@ Using them, you can easily visualize the expression levels of the genes you are 
 This package was originally developed for members of Weed Science lab of Kyoto University.
 
 ## Installation
-You need `devtools` for the installation of `expression.box`.
+You need `devtools` for the installation of `expression.box`. 
 If you don't have `devtools`, you can install it from CRAN:
 
 ```R
@@ -25,7 +25,7 @@ devtools::install_github('Hinata-Ishizawa/expression.box')
 
 ## Usage
 ### Data formatting
-Run `generate_TPM_table()` to extract the required information from .results files. The only parameter of this function is `directory_path`, that is the path to .results files [default: 'result'].
+Run `generate_TPM_table()` to extract the required information from .results files. The only parameter of this function is `directory_path`, that is the path to .results files [default: 'result']. 
 For example, if you put your files as below,
 
 ```
