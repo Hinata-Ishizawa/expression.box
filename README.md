@@ -14,7 +14,7 @@ You need `devtools` for the installation of `expression.box`.
 If you don't have `devtools`, you can install it from CRAN:
 
 ```R
-install.packages("devtools")
+install.packages('devtools')
 ```
 
 You can install `expression.box`:
