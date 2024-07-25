@@ -114,7 +114,7 @@ data_arange <- function(file_path = "TPM.txt", gene_set, sample, replication = 3
 
 expression_box <- function(file_path = "TPM.txt", gene_set, sample, replication = 3, pal = NULL){
   data_arange(file_path, gene_set, sample, replication) %>% 
-  ggpubr::ggboxplot(x="Group", y="TPM", facet.by = "genes", 
+  ggpubr::ggboxplot(x="Group", y="TPM", facet.by = "genes", ncol = length(gene_set), 
             color = "Group", ylab = "TPM",
             size = 0.2, add="jitter", palette = pal, fill = "Group", alpha=0.4,
             add.params = list(size=1), 
